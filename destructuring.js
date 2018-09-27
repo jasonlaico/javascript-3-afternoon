@@ -6,7 +6,7 @@
   You can refresh the page at any time to re-run all the tests.
 */
 
-////////// PROBLEM 1 //////////
+//////// PROBLEM 1 //////////
 
 // Do not edit the code below.
 var carDetails = {
@@ -21,8 +21,7 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
-
+var {color, make, model, year} = carDetails;
 
 
 ////////// PROBLEM 2 //////////
@@ -35,7 +34,8 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
-  
+  var {firstName,lastName,title} = obj;
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -54,7 +54,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation (obj){
+  var {utah, california, texas, arizona} = obj;
+  return utah+ california + texas + arizona;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -68,7 +71,12 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function ingredients (obj){
+  const arr= [];
+  const {carb, fat, protein} = obj;
+  arr.push(carb, fat, protein)
+  return arr;
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,17 +94,27 @@ function greeting( obj ) {
 */
 
 //Code Here
+function largeNumbers ({first, second, third}){
+  return Math.min (first,second,third)
+}
 
 
+// // ////////// PROBLEM 6 //////////
 
-////////// PROBLEM 6 //////////
+// // /*
+// //   Write a function called numberGroups that will take a destructured object as it's parameter.
+// //   The object properties will be named a, b, and c and their values will be arrays of numbers.
+// //   Find the longest array and return that array.
+// // */
 
-/*
-  Write a function called numberGroups that will take a destructured object as it's parameter.
-  The object properties will be named a, b, and c and their values will be arrays of numbers.
-  Find the longest array and return that array.
-*/
-
-//Code Here
-
-
+// // //Code Here
+function numberGroups ({a,b,c}){
+const longest = Math.max(a.length,b.length,c.length);
+  if(a.length === longest){
+    return a
+  }
+  else if(b.length === longest){
+    return b
+  }
+  else{
+    return c}}
